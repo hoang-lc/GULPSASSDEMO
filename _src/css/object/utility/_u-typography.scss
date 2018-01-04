@@ -1,0 +1,134 @@
+/* --------------------------------------
+ * Utility Typography
+ * -------------------------------------- */
+
+// Text alignment
+
+.u-TextNowrap {
+  white-space: nowrap;
+}
+
+.u-TextCenter {
+  text-align: center;
+  &-md {
+    @include media-up(md) {
+      text-align: center !important;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      text-align: center !important;
+    }
+  }
+}
+
+.u-TextLeft {
+  text-align: left;
+  &-md {
+    @include media-up(md) {
+      text-align: left !important;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      text-align: left !important;
+    }
+  }
+}
+
+.u-TextRight {
+  text-align: right;
+  &-md {
+    @include media-up(md) {
+      text-align: right !important;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      text-align: right !important;
+    }
+  }
+}
+
+// Font weight and italics
+
+.u-FontWeightBold {
+  font-weight: bold;
+  &-md {
+    @include media-up(md) {
+      font-weight: bold !important;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      font-weight: bold !important;
+    }
+  }
+}
+
+.u-FontStyleItalic {
+  font-style: italic;
+  &-md {
+    @include media-up(md) {
+      font-style: italic !important;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      font-style: italic !important;
+    }
+  }
+}
+
+// Text sizing
+.u-Text-sm {
+  @include media-down(md) {
+    font-size: 1.1rem;
+  }
+
+  @include media-up(md) {
+    font-size: 1.2rem;
+  }
+}
+
+.u-Text-md {
+  @include media-down(md) {
+    font-size: 1.3rem;
+  }
+
+  @include media-up(md) {
+    font-size: 1.4rem;
+  }
+}
+
+// .u-Text-lg {
+//   @include media-down(md) {
+//     font-size: 1.2rem;
+//   }
+
+//   @include media-up(md) {
+//     font-size: 2rem;
+//   }
+// }
+
+
+// .u-Text-xl {
+//   @include media-down(md) {
+//     font-size: 1.8rem;
+//   }
+
+//   @include media-up(md) {
+//     font-size: 2.4rem;
+//   }
+// }
+
+
+// .u-Text-xxl {
+//   @include media-down(md) {
+//     font-size: 1.8rem;
+//   }
+
+//   @include media-up(md) {
+//     font-size: 2.8rem;
+//   }
+// }

@@ -1,0 +1,19 @@
+/* --------------------------------------
+ * Utility container
+ *--------------------------------------- */
+
+.container {
+  // background: yellow;
+  @include media-up(xlg) {
+    width: $WIDTH-CONTENT;
+    margin: 0 auto;
+  }
+  @include media-down(xlg) {
+    width: 100rem;
+    margin: 0 auto;
+  }
+  @include media-down(lg) {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+}

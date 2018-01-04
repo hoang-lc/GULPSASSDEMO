@@ -1,0 +1,42 @@
+/* --------------------------------------
+===| Base |===
+--------------------------------------- */
+
+// Base Font
+//---------------------------------------
+$FONT-BASE: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'Yu Gothic', YuGothic, Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+$FONT-BASE-IE10-OVER: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+
+// Base Color
+//---------------------------------------
+$COLOR-BASE: #1F1F1F;
+$COLOR-LINK: #67BEE6;
+$COLOR-ACTIVE: #503120;
+$COLOR-WHITE: #FFFFFF;
+$COLOR-BLACK: #000000;
+
+// content width
+//---------------------------------------
+$WIDTH-CONTENT: 1200px;
+$WIDTH-CONTENT-SMARTPHONE: 750px;
+
+// Breakpoint
+//---------------------------------------
+$breakpoints-up: (
+  'xxs': 'print,screen and (min-width: 400px)',
+  'xs': 'print,screen and (min-width: 481px)',
+  'sm': 'print,screen and (min-width: 640px)',
+  'md': 'print,screen and (min-width: 769px)',
+  'lg': 'print,screen and (min-width: 1024px)',
+  'xlg': 'print,screen and (min-width: 1221px)',
+  'xxlg': 'print,screen and (min-width: 1451px)',
+) !default;
+$breakpoints-down: (
+  'xxs': 'print,screen and (max-width: 401px)',
+  'xs': 'print,screen and (max-width: 480px)',
+  'sm': 'print,screen and (max-width: 639px)',
+  'md': 'print,screen and (max-width: 768px)',
+  'lg': 'print,screen and (max-width: 1023px)',
+  'xlg': 'print,screen and (max-width: 1220px)',
+  'xxlg': 'print,screen and (max-width: 1450px)',
+) !default;

@@ -1,0 +1,80 @@
+/* --------------------------------------
+ * Utility Display
+ *--------------------------------------- */
+
+// block
+
+.u-Block {
+  display: block;
+  &-md {
+    @include media-up(md) {
+      display: block;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      display: block;
+    }
+  }
+  &-smOnly {
+    @include media-up(md) {
+      display: none;
+    }
+    @include media-down(md) {
+      display: block;
+    }
+  }
+  &-mdOnly {
+    @include media-up(md) {
+      display: block;
+    }
+    @include media-down(md) {
+      display: none;
+    }
+  }
+}
+
+// inline
+.u-Inline {
+  display: inline;
+}
+
+// inline-block
+
+.u-InlineBlock {
+  display: inline-block;
+  &-md {
+    @include media-up(md) {
+      display: inline-block;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      display: inline-block;
+    }
+  }
+  &-smOnly {
+    @include media-up(sm) {
+      display: none;
+    }
+    @include media-down(sm) {
+      display: inline-block;
+    }
+  }
+  &-mdOnly {
+    @include media-up(md) {
+      display: inline-block;
+    }
+    @include media-down(md) {
+      display: none;
+    }
+  }
+  &-lgOnly {
+    @include media-up(lg) {
+      display: inline-block;
+    }
+    @include media-down(lg) {
+      display: none;
+    }
+  }
+}

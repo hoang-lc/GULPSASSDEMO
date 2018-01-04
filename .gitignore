@@ -1,0 +1,15 @@
+.AppleDouble
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# npm
+node_modules
+npm-debug.log
+package-lock.json
+.git
+
+# static data
+_dest
+_backlog

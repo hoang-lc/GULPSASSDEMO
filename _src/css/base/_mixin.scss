@@ -1,0 +1,29 @@
+/* --------------------------------------
+===| Mixin |===
+--------------------------------------- */
+
+// Media queries
+@mixin media-up($breakpoint: md) {
+  @media #{map-get($breakpoints-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint: md) {
+  @media #{map-get($breakpoints-down, $breakpoint)} {
+    @content;
+  }
+}
+
+// clearfix
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}

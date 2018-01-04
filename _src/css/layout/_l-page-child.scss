@@ -1,0 +1,267 @@
+/* --------------------------------------
+ * Layout page child
+ * -------------------------------------- */
+
+.site-ChildPage {
+  .md-Article_Title {
+    span {
+      font-size: 2.6rem;
+      line-height: 1.423;
+      font-style: italic;
+      @include media-down(xs) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.md-ChildPage {
+  @include media-up(md) {
+    @include clearfix();
+  }
+}
+.md-ChildNews {
+  color: #391F06;
+  @include media-up(xlg) {
+    padding-left: 0;
+    padding-left: 11rem;
+  }
+  @include media-down(xlg) {
+    padding-left: 0;
+  }
+  @include media-up(md) {
+    width: 93rem;
+    width: calc(100% - 24rem - 3rem);
+    float: left;
+  }
+  @include media-down(md) {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  &_Content {
+    padding: 5rem 6rem 4rem;
+    border: 1px solid #aaa;
+    @include media-down(xlg) {
+      padding: 3rem 1.5rem 2rem;
+    }
+    @include media-down(xs) {
+      padding: 1.5rem;
+    }
+  }
+  &_Head {
+    margin-bottom: 3rem;
+    @include media-down(xs) {
+      margin-bottom: 1.5rem;
+    }
+    dl {
+      display: table;
+      width: 100%;
+      border-bottom: 2px solid #391f06;
+      @include media-down(xlg) {
+        border-bottom-width: 1px;
+      }
+      @include media-down(xs) {
+        width: 100%;
+        display: block;
+      }
+    }
+    dt {
+      display: table-cell;
+      font-size: 1.4rem;
+      font-weight: 600;
+      vertical-align: middle;
+      width: 22.5rem;
+      padding: 1rem 1rem 1rem 3rem;
+      @include media-down(sm) {
+        width: 11rem;
+        padding-left: 0;
+      }
+      @include media-down(xs) {
+        width: 100%;
+        display: block;
+      }
+    }
+    dd {
+      font-size: 1.4rem;
+      display: table-cell;
+      vertical-align: middle;
+      font-weight: 400;
+      padding: 1rem 0;
+      @include media-down(xs) {
+        width: 100%;
+        display: block;
+        padding-top: 0;
+      }
+    }
+  }
+  &_Body {
+    p {
+      margin-bottom: 1.5rem;
+    }
+    img {}
+  }
+  &_List {}
+  &_Item {
+    @include media-up(xs) {
+      @include clearfix();
+    }
+    @include media-up(lg) {
+      margin-bottom: 6rem;
+    }
+    @include media-down(lg) {
+      margin-bottom: 3rem;
+    }
+    @include media-down(xs) {
+      margin-bottom: 2rem;
+    }
+  }
+  &_Thumb {
+    @include media-up(xs) {
+      float: left;
+    }
+    @include media-up(lg) {
+      width: 26rem;
+      margin-right: 6rem;
+    }
+    @include media-down(lg) {
+      width: 23rem;
+      margin-right: 2rem;
+    }
+    @include media-down(md) {
+      width: 20rem;
+    }
+    @include media-down(xs) {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    a {}
+    img {
+      display: block;
+      max-width: 100%;
+      @include media-down(xs) {
+        width: 100%;
+      }
+    }
+  }
+  &_Desc {
+    overflow: hidden;
+    @include media-up(xs) {
+
+    }
+    @include media-up(lg) {
+      padding-right: 6rem;
+    }
+    p {}
+  }
+  &_Time {
+    font-size: 1.2rem;
+    line-height: 1.66667;
+    font-style: italic;
+    font-weight: 400;
+    display: inline-block;
+  }
+  &_Title {
+    line-height: 1.93;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 6.5rem;
+    @include media-down(xlg) {
+      margin-bottom: 2rem;
+    }
+    @include media-down(lg) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+.md-PageNavi {
+  border-bottom: 1px solid #aaa;
+  padding: 10rem 0 4rem;
+  text-align: center;
+  @include clearfix();
+  font-size: 1.4rem;
+  @include media-down(md) {
+    padding: 3rem 0 2rem;
+  }
+  @include media-down(xs) {
+    padding: 1.5rem 0;
+  }
+  .wp-pagenavi {
+    position: relative;
+  }
+  .wp-pagenavi > * {
+    padding: 0 0.3rem;
+    margin: 0 1rem;
+    @include media-down(xs) {
+      margin: 0 0.5rem;
+    }
+    @include media-down(xxs) {
+      margin: 0 0.2rem !important;
+    }
+  }
+  .pages {}
+  .current {
+    border-bottom: 1px solid #7b6357;
+  }
+  .page {
+    &:hover {
+      border-bottom: 1px solid #7b6357;
+    }
+  }
+  .extend {}
+  .nextpostslink {
+    border: 2px solid #583b2b;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1.5rem;
+    text-align: center;
+    padding: 0;
+    i {
+      line-height: 2.6rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.6rem;
+      display: block;
+    }
+    @include media-down(xs) {
+      position: static;
+    }
+  }
+}
+.md-SideBar {
+  @include media-up(md) {
+    margin-top: 11rem;
+    width: 24rem;
+    float: right;
+    margin-left: 3rem;
+  }
+  @include media-down(md) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  &_List {}
+  &_Item {
+    border-bottom: 1px solid #aaa;
+    padding: 2rem 0 1rem;
+    @include media-down(xs) {
+      padding: 1rem 0
+    }
+  }
+  &_Time {
+    span {
+      font-size: 1.2rem;
+      line-height: 1.66667;
+      font-style: italic;
+      font-weight: 400;
+      display: inline-block;
+    }
+  }
+  &_Title {
+    line-height: 1.93;
+    font-size: 1.4rem;
+    font-weight: bold;
+    a {
+      color: inherit;
+    }
+  }
+}

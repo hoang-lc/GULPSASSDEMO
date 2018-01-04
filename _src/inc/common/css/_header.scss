@@ -1,0 +1,254 @@
+/* --------------------------------------
+===| Header |===
+--------------------------------------- */
+
+.site-HeaderWrapper {
+  padding-top: 1.1rem;
+}
+
+.site-Header {
+  @include media-down(lg) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.site-HeaderLogo {
+  width: 17.4rem;
+  height: 5.4rem;
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+  &_Link {
+    display: block;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  @include media-down(sm) {
+    width: 14rem;
+    height: 4.4rem;
+  }
+}
+
+.site-HeaderButton {
+  width: 13.5rem;
+  float: right;
+  .md-Button {
+    text-align: left;
+    padding: 1.3rem 1.1rem 1.3rem 1.5rem;
+    font-size: 1.6rem;
+    width: 100%;
+    min-width: auto;
+    &_Text-sm {
+      font-size: 1rem;
+      display: block;
+    }
+    &_Arrow {
+      right: 1.1rem;
+    }
+  }
+  @include media-down(lg) {
+    margin-right: 0;
+    width: 17.4rem;
+  }
+  @include media-down(sm) {
+    margin-right: 0;
+  }
+}
+
+.site-Gnav {
+  @include media-up(lg) {
+    @include clearfix();
+  }
+  &_Item {
+    float: left;
+    width: 16.6666666666%;
+    text-align: center;
+    background-color: gray;
+  }
+  &_Link {
+    display: block;
+    text-decoration: none;
+    padding-bottom: 1.8rem;
+    &:hover,
+    &.active {
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      @include media-up(lg) {
+        .site-Gnav_Icon {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+  &_Icon {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin: -1.6rem auto 0.7rem;
+    border-radius: 50%;
+    padding: 0.2rem;
+    transform: scale(1);
+    transition: all 0.5s;
+    display: block;
+    img {
+      width: 3.2rem;
+      margin: 1rem auto;
+      height: 3.2rem;
+      display: block;
+    }
+  }
+  &_Text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $COLOR-WHITE;
+  }
+  @include media-down(lg) {
+    &Wrap {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      background-color: rgba($COLOR-BLACK, 0.85);
+      overflow-x: hidden;
+      padding-top: 8.3rem;
+      z-index: 1000;
+    }
+    &_Item {
+      display: block;
+      float: none;
+      width: 100%;
+      text-align: left;
+      padding: 1rem 20%;
+    }
+    &_Link {
+      padding-bottom: 0;
+      display: table;
+    }
+    &_Icon {
+      display: inline-block;
+      margin: 0 1rem 0 0;
+      float: left;
+      img {
+        margin: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    &_Text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  @include media-down(xs) {
+    &Wrap {
+      padding-top: 7rem;
+    }
+    &_Icon {
+      width: 4.4rem;
+      height: 4.4rem;
+    }
+  }
+}
+
+.site-GnavWrap {
+  background-color: #F0F0DF;
+  transition: all 0.5s;
+  @include media-up(lg) {
+    left: 0 !important;
+  }
+  &.is-fixed {
+    @include media-up(lg) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: slide-down 0.7s;
+      z-index: 1000;
+      .site-Gnav {
+        &_Link {
+          padding-bottom: 0.5rem;
+        }
+        &_Icon {
+          margin-top: 0;
+          width: 4rem;
+          height: 4rem;
+          img {
+            margin: 0.5rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.site-Gnav_Button {
+  @include media-up(lg) {
+    display: none;
+  }
+  @include media-down(lg) {
+    display: block;
+    cursor: pointer;
+    width: 4rem;
+    height: 3rem;
+    position: relative;
+    top: 2.4rem;
+    right: 1.5rem;
+    span {
+      position: absolute;
+      width: 100%;
+      height: 0.2rem;
+      content: "";
+      background-color: $COLOR-BLACK;
+      transition: all 2s;
+      &:nth-of-type(1) {
+        top: 0.2rem;
+      }
+      &:nth-of-type(2) {
+        top: 1.4rem;
+      }
+      &:nth-of-type(3) {
+        top: 2.6rem;
+      }
+    }
+    &-Open {
+      position: fixed;
+      z-index: 1000;
+    }
+    &-Close {
+      position: absolute;
+      span {
+        background-color: $COLOR-WHITE;
+        &:nth-of-type(1) {
+          top: 1.35rem;
+          transform: rotate(225deg);
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+        &:nth-of-type(3) {
+          top: 1.35rem;
+          transform: rotate(315deg);
+        }
+      }
+    }
+  }
+  @include media-down(sm) {
+    top: 1.8rem;
+  }
+}

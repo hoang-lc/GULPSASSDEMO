@@ -1,0 +1,87 @@
+/* --------------------------------------
+ * Utility Align
+ *--------------------------------------- */
+
+.u-AlignBaseline {
+  vertical-align: baseline;
+  &-md {
+    @include media-up(md) {
+      vertical-align: baseline;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: baseline;
+    }
+  }
+}
+
+.u-AlignTop {
+  vertical-align: top;
+  &-md {
+    @include media-up(md) {
+      vertical-align: top;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: top;
+    }
+  }
+}
+
+.u-AlignMiddle {
+  vertical-align: middle;
+  &-md {
+    @include media-up(md) {
+      vertical-align: middle;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: middle;
+    }
+  }
+}
+
+.u-AlignBottom {
+  vertical-align: bottom;
+  &-md {
+    @include media-up(md) {
+      vertical-align: bottom;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: bottom;
+    }
+  }
+}
+
+.u-AlignTextBottom {
+  vertical-align: text-bottom;
+  &-md {
+    @include media-up(md) {
+      vertical-align: text-bottom;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.u-AlignTextTop {
+  vertical-align: text-top;
+  &-md {
+    @include media-up(md) {
+      vertical-align: text-top;
+    }
+  }
+  &-sm {
+    @include media-down(md) {
+      vertical-align: text-top;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/* --------------------------------------
+===| Setting |===
+--------------------------------------- */
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  font-size: 62.5%; // 10px
+  @include media-down(md) {
+    // font-size: 1.5625vw;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+.site-wrapper {
+  width: 100%;
+}
+body {
+
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: $FONT-BASE;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: $COLOR-BASE;
+}
+a:hover {
+  opacity: .7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  zoom: 1;
+}
+
+// IE10 over
+@media all and (-ms-high-contrast: none) {
+  body {
+    font-family: $FONT-BASE-IE10-OVER;
+  }
+}
+
+.site-Body {
+  padding-top: 0;
+  &.menu-fixed {
+    @include media-up(lg) {
+      padding-top: 9.2rem;
+    }
+  }
+}

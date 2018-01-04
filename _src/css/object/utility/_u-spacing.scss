@@ -1,0 +1,22 @@
+/* --------------------------------------
+ * Utility Spacing
+ * -------------------------------------- */
+
+@for $i from 0 through 20 {
+  .u-MarginTop-#{$i * 5} { margin-top: 5px * $i !important; }
+  .u-MarginRight-#{$i * 5} { margin-right: 5px * $i !important; }
+  .u-MarginBottom-#{$i * 5} { margin-bottom: 5px * $i !important; }
+  .u-MarginLeft-#{$i * 5} { margin-left: 5px * $i !important; }
+  .u-PaddingTop-#{$i * 5} { padding-top: 5px * $i !important; }
+  .u-PaddingRight-#{$i * 5} { padding-right: 5px * $i !important; }
+  .u-PaddingBottom-#{$i * 5} { padding-bottom: 5px * $i !important; }
+  .u-PaddingLeft-#{$i * 5} { padding-left: 5px * $i !important; }
+}
+
+
+
+/* Horizontal centering
+--------------------------------------- */
+.u-MarginCenter {
+  margin: 0 auto;
+}
