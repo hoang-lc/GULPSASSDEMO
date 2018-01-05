@@ -2,7 +2,7 @@
  * Utility Align
  *--------------------------------------- */
 
-.u-AlignBaseline {
+.u-alignBaseline {
   vertical-align: baseline;
   &-md {
     @include media-up(md) {
@@ -16,7 +16,7 @@
   }
 }
 
-.u-AlignTop {
+.u-alignTop {
   vertical-align: top;
   &-md {
     @include media-up(md) {
@@ -30,7 +30,7 @@
   }
 }
 
-.u-AlignMiddle {
+.u-alignMiddle {
   vertical-align: middle;
   &-md {
     @include media-up(md) {
@@ -44,7 +44,7 @@
   }
 }
 
-.u-AlignBottom {
+.u-alignBottom {
   vertical-align: bottom;
   &-md {
     @include media-up(md) {
@@ -58,7 +58,7 @@
   }
 }
 
-.u-AlignTextBottom {
+.u-alignTextBottom {
   vertical-align: text-bottom;
   &-md {
     @include media-up(md) {
@@ -72,7 +72,7 @@
   }
 }
 
-.u-AlignTextTop {
+.u-alignTextTop {
   vertical-align: text-top;
   &-md {
     @include media-up(md) {

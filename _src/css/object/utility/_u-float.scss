@@ -2,7 +2,7 @@
  * Utility Float
  * -------------------------------------- */
 
-.u-FloatLeft {
+.u-floatLeft {
   float: left;
   &-md {
     @include media-up(md) {
@@ -16,7 +16,7 @@
   }
 }
 
-.u-FloatRight {
+.u-floatRight {
   float: right;
   &-md {
     @include media-up(md) {

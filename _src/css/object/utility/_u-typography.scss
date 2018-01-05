@@ -4,11 +4,11 @@
 
 // Text alignment
 
-.u-TextNowrap {
+.u-textNowrap {
   white-space: nowrap;
 }
 
-.u-TextCenter {
+.u-textCenter {
   text-align: center;
   &-md {
     @include media-up(md) {
@@ -22,7 +22,7 @@
   }
 }
 
-.u-TextLeft {
+.u-textLeft {
   text-align: left;
   &-md {
     @include media-up(md) {
@@ -36,7 +36,7 @@
   }
 }
 
-.u-TextRight {
+.u-textRight {
   text-align: right;
   &-md {
     @include media-up(md) {
@@ -52,7 +52,7 @@
 
 // Font weight and italics
 
-.u-FontWeightBold {
+.u-fontWeightBold {
   font-weight: bold;
   &-md {
     @include media-up(md) {
@@ -66,7 +66,7 @@
   }
 }
 
-.u-FontStyleItalic {
+.u-fontStyleItalic {
   font-style: italic;
   &-md {
     @include media-up(md) {
@@ -81,54 +81,14 @@
 }
 
 // Text sizing
-.u-Text-sm {
-  @include media-down(md) {
-    font-size: 1.1rem;
-  }
+.u-text-sm {
+  @include media-down(md) {}
 
-  @include media-up(md) {
-    font-size: 1.2rem;
-  }
+  @include media-up(md) {}
 }
 
-.u-Text-md {
-  @include media-down(md) {
-    font-size: 1.3rem;
-  }
+.u-text-md {
+  @include media-down(md) {}
 
-  @include media-up(md) {
-    font-size: 1.4rem;
-  }
+  @include media-up(md) {}
 }
-
-// .u-Text-lg {
-//   @include media-down(md) {
-//     font-size: 1.2rem;
-//   }
-
-//   @include media-up(md) {
-//     font-size: 2rem;
-//   }
-// }
-
-
-// .u-Text-xl {
-//   @include media-down(md) {
-//     font-size: 1.8rem;
-//   }
-
-//   @include media-up(md) {
-//     font-size: 2.4rem;
-//   }
-// }
-
-
-// .u-Text-xxl {
-//   @include media-down(md) {
-//     font-size: 1.8rem;
-//   }
-
-//   @include media-up(md) {
-//     font-size: 2.8rem;
-//   }
-// }

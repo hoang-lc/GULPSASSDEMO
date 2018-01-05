@@ -1,7 +1,3 @@
-/* --------------------------------------
-===| Mixin |===
---------------------------------------- */
-
 // Media queries
 @mixin media-up($breakpoint: md) {
   @media #{map-get($breakpoints-up, $breakpoint)} {

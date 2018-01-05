@@ -4,7 +4,7 @@
 
 // block
 
-.u-Block {
+.u-block {
   display: block;
   &-md {
     @include media-up(md) {
@@ -35,13 +35,13 @@
 }
 
 // inline
-.u-Inline {
+.u-inline {
   display: inline;
 }
 
 // inline-block
 
-.u-InlineBlock {
+.u-inlineBlock {
   display: inline-block;
   &-md {
     @include media-up(md) {

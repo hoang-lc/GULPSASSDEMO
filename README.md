@@ -1,19 +1,13 @@
-# GULPSassDemo
-#----------------------------
-#>git clone https://gitlab.com/hoang-lc/GULPSASSDEMO.git
-#>npm i
-#>gulp
-#----------------------------
-#>>> enjoy <<<<
-#Gitsavvy
-#
-#
-#
-#
-#
-#
-#
-#
+ GULPSassDemo
+----------------------------
+- git clone https://gitlab.com/hoang-lc/GULPSASSDEMO.git
+- npm i
+- gulp
+----------------------------
+>>> enjoy <<<<
+
+Gitsavvy
+----------------------------
 src/
 ├── html/
 │   ├── includes/
@@ -33,7 +27,7 @@ src/
 │   └── libs/
 ├── static/
 └── styles/
-    ├── foundation/
+    ├── base/
     │   └── _reset.scss
     │   ├── _base.scss
     │   ├── _mixins.scss
