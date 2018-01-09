@@ -29,7 +29,7 @@ gulp.task('sass', function() {
   var sourcemaps = require('gulp-sourcemaps');
   var rename = require('gulp-rename');
   var wait = require('gulp-wait');
-  var bourbon = require('node-bourbon');
+
 
   return gulp.src('./_src/**/*.scss')
     .pipe(wait(500))
@@ -37,7 +37,6 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass.sync({
-      includePaths: bourbon.includePaths,
       // outputStyle: 'nested',
       outputStyle: 'expanded',
       // outputStyle: 'compact',
