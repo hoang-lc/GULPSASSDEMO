@@ -1,0 +1,18 @@
+/* --------------------------------------
+ * Layout main
+ * -------------------------------------- */
+
+.l-main {}
+.box {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  .box_inner {
+    border-radius: 40px;
+    height: 40px;
+    background-color: #8fdce5;
+    width: 40px;
+  }
+  .box_inner:hover {
+  }
+}
