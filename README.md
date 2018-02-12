@@ -1,32 +1,32 @@
  GULPSassDemo
-----------------------------
-- git clone https://gitlab.com/hoang-lc/GULPSASSDEMO.git
-- npm i
-- gulp
-----------------------------
->>> enjoy <<<<
 
-Gitsavvy
+Run
 ----------------------------
++ git clone https://gitlab.com/hoang-lc/GULPSASSDEMO.git
++ npm i
++ gulp
+----------------------------
+
+Directory Structure
+----------------------------
+static/
+├── img/
+│
 src/
 ├── html/
-│   ├── includes/
-│   │   ├── components/
-│   │   │   └── index.html
-│   │   ├── layouts/
-│   │   │   └── default.html
-│   │   ├── mixins/
-│   │   │   └── index.html
-│   │   └── partials/
-│   │       └── gtm.html
-│   └── index.html
-├── images/
-├── scripts/
+│   ├── inc/
+│   │   └── common/
+│   │       └── header.html
+│   │       └── footer.html
+│   ├── index.html
+│   ├── about/
+│   │   └── index.html
+│   ├── introduction/
+│       └── index.html
+├── js/
 │   ├── app.js
-│   ├── modules/
-│   └── libs/
-├── static/
-└── styles/
+│   ├── vendor/
+└── css/
     ├── base/
     │   └── _reset.scss
     │   ├── _base.scss
