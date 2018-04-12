@@ -1,12 +1,37 @@
 var gulp = require('gulp');
 
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var mqpacker = require('css-mqpacker');
+var pixrem = require('pixrem');
+var csswring = require('csswring');
+var sassGlob = require('gulp-sass-glob');
+var sourcemaps = require('gulp-sourcemaps');
+var rename = require('gulp-rename');
+var wait = require('gulp-wait');
+
+var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
+
+var cached = require('gulp-cached');
+var imagemin = require('gulp-imagemin');
+
+var webserver = require('gulp-webserver');
+var connectSSI = require('connect-ssi');
+var ip = require('my-ip');
+var del = require('del');
+var watch = require('gulp-watch');
+var runSequence = require('run-sequence');
+
 /* ==================================================
  * html
  * ================================================== */
 
 gulp.task('html', function() {
-  var plumber = require('gulp-plumber');
-  var notify = require('gulp-notify');
   return gulp.src('_src/**/*.html')
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(gulp.dest('./_dest'));
@@ -17,20 +42,6 @@ gulp.task('html', function() {
  * ================================================== */
 
 gulp.task('sass', function() {
-  var notify = require('gulp-notify');
-  var plumber = require('gulp-plumber');
-  var sass = require('gulp-sass');
-  var postcss = require('gulp-postcss');
-  var autoprefixer = require('autoprefixer');
-  var mqpacker = require('css-mqpacker');
-  var pixrem = require('pixrem');
-  var csswring = require('csswring');
-  var sassGlob = require('gulp-sass-glob');
-  var sourcemaps = require('gulp-sourcemaps');
-  var rename = require('gulp-rename');
-  var wait = require('gulp-wait');
-
-
   return gulp.src('./_src/**/*.scss')
     .pipe(wait(500))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
@@ -68,12 +79,6 @@ gulp.task('sass', function() {
  * scripts
  * ================================================== */
 gulp.task('scripts', function() {
-  var browserify = require('browserify');
-  var buffer = require('vinyl-buffer');
-  var notify = require("gulp-notify");
-  var plumber = require('gulp-plumber');
-  var sourcemaps = require('gulp-sourcemaps');
-
   return gulp.src(['./_src/js/**/*.js', './_src/js/**/*.min.js'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(buffer())
@@ -96,9 +101,6 @@ gulp.task('font', function() {
  * ================================================== */
 
 gulp.task('img', function() {
-  var cached = require('gulp-cached');
-  var imagemin = require('gulp-imagemin');
-
   return gulp.src('./_src/**/*.{svg,jpg,png,gif,mp4,ico}')
     .pipe(cached('img'))
     .pipe(imagemin([
@@ -120,10 +122,6 @@ gulp.task('img', function() {
  * ================================================== */
 
 gulp.task('webserver', function() {
-  var webserver = require('gulp-webserver');
-  var connectSSI = require('connect-ssi');
-  var ip = require('my-ip');
-
   gulp.src(['_dest', '_static'])
     .pipe(webserver({
       host: '0.0.0.0',
@@ -161,8 +159,6 @@ gulp.task('webserver', function() {
  * ================================================== */
 
 gulp.task('watch', function() {
-  var watch = require('gulp-watch');
-
   watch('_src/**/*.html', function() {
     gulp.start('html');
   });
@@ -185,8 +181,6 @@ gulp.task('watch', function() {
  * ================================================= */
 
 gulp.task('clean', function() {
-  var del = require('del');
-
   return del([
     '_dest'
   ]);
@@ -203,8 +197,6 @@ gulp.task('dev', ['scripts', 'watch', 'webserver']);
  * ================================================== */
 
 gulp.task('build', function(callback) {
-  var runSequence = require('run-sequence');
-
   runSequence(
     'clean', ['html', 'font', 'img', 'sass', 'scripts'], ['watch', 'webserver'],
     callback

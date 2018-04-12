@@ -8,7 +8,7 @@
     width: $WIDTH-CONTENT;
     margin: 0 auto;
   }
-  @include media-down(xlg) {
+  @include media-up(lg) {
     width: 100rem;
     margin: 0 auto;
   }
