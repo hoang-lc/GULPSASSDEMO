@@ -3,7 +3,7 @@ html {
   -ms-overflow-style: scrollbar;
   font-size: 62.5%; // 10px
   @include media-down(md) {
-    // font-size: 1.5625vw;
+    // font-size: 1.33333334vw; // 10px/768px*100%
   }
 }
 *,
@@ -19,6 +19,9 @@ body,
 }
 body {
 
+}
+ul {
+  list-style: none;
 }
 a {
   text-decoration: none;

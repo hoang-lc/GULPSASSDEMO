@@ -9,6 +9,7 @@ $COLOR-BASE: #1F1F1F;
 $COLOR-LINK: #67BEE6;
 $COLOR-ACTIVE: #503120;
 $COLOR-WHITE: #FFFFFF;
+$COLOR-GRAY: #EFEFEF;
 $COLOR-BLACK: #000000;
 
 // content width
@@ -19,20 +20,20 @@ $WIDTH-CONTENT-SMARTPHONE: 750px;
 // Breakpoint
 //---------------------------------------
 $breakpoints-up: (
-  'xxs': 'print,screen and (min-width: 400px)',
+  'xxs': 'print,screen and (min-width: 361px)',
   'xs': 'print,screen and (min-width: 481px)',
-  'sm': 'print,screen and (min-width: 640px)',
-  'md': 'print,screen and (min-width: 769px)',
-  'lg': 'print,screen and (min-width: 1024px)',
+  'sm': 'print,screen and (min-width: 641px)',
+  'md': 'print,screen and (min-width: 751px)',
+  'lg': 'print,screen and (min-width: 1025px)',
   'xlg': 'print,screen and (min-width: 1221px)',
   'xxlg': 'print,screen and (min-width: 1451px)',
 ) !default;
 $breakpoints-down: (
-  'xxs': 'print,screen and (max-width: 401px)',
+  'xxs': 'print,screen and (max-width: 360px)',
   'xs': 'print,screen and (max-width: 480px)',
-  'sm': 'print,screen and (max-width: 639px)',
-  'md': 'print,screen and (max-width: 768px)',
-  'lg': 'print,screen and (max-width: 1023px)',
+  'sm': 'print,screen and (max-width: 640px)',
+  'md': 'print,screen and (max-width: 750px)',
+  'lg': 'print,screen and (max-width: 1024px)',
   'xlg': 'print,screen and (max-width: 1220px)',
   'xxlg': 'print,screen and (max-width: 1450px)',
 ) !default;
