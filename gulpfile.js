@@ -1,31 +1,32 @@
-var gulp = require('gulp');
+var gulp          = require('gulp');
 
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
+var plumber       = require('gulp-plumber');
+var notify        = require('gulp-notify');
+var ssi   = require("gulp-ssi");
 
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mqpacker = require('css-mqpacker');
-var pixrem = require('pixrem');
-var csswring = require('csswring');
-var sassGlob = require('gulp-sass-glob');
-var sourcemaps = require('gulp-sourcemaps');
-var rename = require('gulp-rename');
-var wait = require('gulp-wait');
+var sass          = require('gulp-sass');
+var postcss       = require('gulp-postcss');
+var autoprefixer  = require('autoprefixer');
+var mqpacker      = require('css-mqpacker');
+var pixrem        = require('pixrem');
+var csswring      = require('csswring');
+var sassGlob      = require('gulp-sass-glob');
+var sourcemaps    = require('gulp-sourcemaps');
+var rename        = require('gulp-rename');
+var wait          = require('gulp-wait');
 
-var browserify = require('browserify');
-var buffer = require('vinyl-buffer');
+var browserify    = require('browserify');
+var buffer        = require('vinyl-buffer');
 
-var cached = require('gulp-cached');
-var imagemin = require('gulp-imagemin');
+var cached        = require('gulp-cached');
+var imagemin      = require('gulp-imagemin');
 
-var webserver = require('gulp-webserver');
-var connectSSI = require('connect-ssi');
-var ip = require('my-ip');
-var del = require('del');
-var watch = require('gulp-watch');
-var runSequence = require('run-sequence');
+var webserver     = require('gulp-webserver');
+var connectSSI    = require('connect-ssi');
+var ip            = require('my-ip');
+var del           = require('del');
+var watch         = require('gulp-watch');
+var runSequence   = require('run-sequence');
 
 /* ==================================================
  * html
@@ -34,6 +35,7 @@ var runSequence = require('run-sequence');
 gulp.task('html', function() {
   return gulp.src('_src/**/*.html')
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(ssi({root: './_src/'}))
     .pipe(gulp.dest('./_dest'));
 });
 
@@ -101,7 +103,7 @@ gulp.task('font', function() {
  * ================================================== */
 
 gulp.task('img', function() {
-  return gulp.src('./_src/**/*.{svg,jpg,png,gif,mp4,ico}')
+  return gulp.src(['./_src/**/*.{svg,jpg,png,gif,mp4,ico}', './_static/**/*.{svg,jpg,png,gif,mp4,ico}'])
     .pipe(cached('img'))
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
@@ -171,9 +173,9 @@ gulp.task('watch', function() {
     gulp.start('scripts');
   });
 
-  watch('_src/**/*.{svg,jpg,png,gif,mp4,ico}', function() {
-    gulp.start('img');
-  });
+  // watch('_src/**/*.{svg,jpg,png,gif,mp4,ico}', function() {
+  //   gulp.start('img');
+  // });
 });
 
 /* =================================================
@@ -190,7 +192,7 @@ gulp.task('clean', function() {
  * dev
  * ================================================= */
 
-gulp.task('dev', ['scripts', 'watch', 'webserver']);
+gulp.task('dev', ['watch', 'webserver']);
 
 /* ==================================================
  * build
@@ -198,7 +200,7 @@ gulp.task('dev', ['scripts', 'watch', 'webserver']);
 
 gulp.task('build', function(callback) {
   runSequence(
-    'clean', ['html', 'font', 'img', 'sass', 'scripts'], ['watch', 'webserver'],
+    'clean', ['html', 'font', /*'img',*/ 'sass', 'scripts'], ['watch', 'webserver'],
     callback
   );
 });

@@ -26,6 +26,7 @@ a {
 }
 img {
   max-width: 100%;
+  vertical-align: bottom;
 }
 
 body {
@@ -46,14 +47,5 @@ a:hover {
 @media all and (-ms-high-contrast: none) {
   body {
     font-family: $FONT-BASE-IE10-OVER;
-  }
-}
-
-.site-Body {
-  padding-top: 0;
-  &.menu-fixed {
-    @include media-up(lg) {
-      padding-top: 9.2rem;
-    }
   }
 }
