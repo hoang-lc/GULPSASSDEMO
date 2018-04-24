@@ -6,6 +6,10 @@
   position: relative;
   @include media-down(md) {
     padding: 1.2rem 0;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   @include media-up(md) {
     padding: 2rem 0;
@@ -13,12 +17,21 @@
   &_Inner {
     @include media-down(md) {}
     @include media-up(md) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
+  .menu-show & {
+    z-index: 10;
   }
 }
 .l-headerLogo {
   @include media-down(md) {
     width: 10rem;
+  }
+  @include media-up(md) {
+    width: 20%;
   }
 }
 
@@ -28,21 +41,27 @@
 .l-gnav {
   $base: &;
   @include media-down(md) {
-    // display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 100%;
     right: 0;
-    background: $COLOR-GRAY;
+    background: $COLOR-WHITE;
     border-top: 1px solid #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+    overflow-y: scroll;
+    // max-height: calc(100vh - 6.1rem);
+    max-height: 80vh;
   }
   @include media-up(md) {
     width: 80%;
-    width: calc(100% - 11.5rem);
-    margin-left: 11.5rem;
+    margin-left: 2%;
     text-align: right;
+  }
+  &.u-show {
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
   &_Button {
     @include media-up(md) {
@@ -53,20 +72,22 @@
       top: 1.2rem;
       right: 1.5rem;
       width: 3.6rem;
-      // padding-top: 1.6rem;
+      padding: 1.75rem 0;
+      cursor: pointer;
+      outline: none;
     }
     span {
       display: block;
       height: 2px;
       background-color: $COLOR-BASE;
       position: relative;
-      margin-top: 1.7rem;
       &:after, &:before {
         position: absolute;
         content: "";
         width: 100%;
         height: 2px;
         background: $COLOR-BASE;
+        transition: all 0.3s ease-in-out;
       }
       &:before {
         top: -1.1rem;
@@ -75,10 +96,26 @@
         bottom: -1.1rem;
       }
     }
+    &.u-close {
+      span {
+        background-color: $COLOR-GRAY;
+        &:before {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        &:after {
+          transform: rotate(45deg);
+          bottom: 0;
+        }
+      }
+    }
   }
   &_Item {
     @include media-down(md) {
       display: block;
+      & + & {
+        border-top: 1px dotted $COLOR-BASE;
+      }
     }
     @include media-up(md) {
       display: inline-block;
@@ -86,12 +123,11 @@
     }
   }
   &_Link {
+    display: block;
     @include media-down(md) {
-      padding: 0.75rem 0;
-      display: inline-block;
+      padding: 1rem 0;
     }
     @include media-up(md) {
-      display: block;
       padding: 1rem 0;
       transition: border-bottom 0.3s ease-in;
       border-bottom: 1px solid $COLOR-GRAY;
@@ -104,6 +140,25 @@
   @at-root #{$base}_Item--active {
     #{$base}_Link {
       color: yellow;
+    }
+  }
+}
+
+.l-wrapper {
+  @include media-down(md) {
+    overflow: hidden;
+    position: relative;
+  }
+  .menu-show & {
+    &_Overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.2);
+      content: "";
+      z-index: 1;
     }
   }
 }

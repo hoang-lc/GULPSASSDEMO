@@ -1,4 +1,10 @@
 /* --------------------------------------
  *l-footer
  *--------------------------------------- */
-.l-footer {}
+.l-footer {
+  background: $COLOR-GRAY;
+  padding: 1.5rem 0;
+}
+.l-copyright {
+  text-align: center;
+}
