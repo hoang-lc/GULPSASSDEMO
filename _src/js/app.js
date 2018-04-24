@@ -222,8 +222,6 @@ $(function($) {
 (function($) {
   if($('body').width() < 751) {
     $('.l-gnav_Button').click(function(event) {
-      // console.log(12);
-      // alert('msg');
       $(this).toggleClass('u-close');
       $('.l-gnav').toggleClass('u-show');
       $('body').toggleClass('menu-show');
