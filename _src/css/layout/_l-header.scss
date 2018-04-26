@@ -6,7 +6,7 @@
   position: relative;
   @include media-down(md) {
     padding: 1.2rem 0;
-    // position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -14,7 +14,7 @@
   @include media-up(md) {
     padding: 2rem 0;
   }
-  &_Inner {
+  &_inner {
     @include media-down(md) {}
     @include media-up(md) {
       display: flex;
@@ -23,10 +23,10 @@
     }
   }
   .menu-show & {
-    z-index: 10;
+    z-index: $zIndex--l-header;
   }
 }
-.l-headerLogo {
+.l-header_logo {
   @include media-down(md) {
     width: 10rem;
   }
@@ -62,8 +62,9 @@
   &.u-show {
     left: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: $zIndex--l-gnav;
   }
-  &_Button {
+  &_button {
     @include media-up(md) {
       display: none;
     }
@@ -75,6 +76,7 @@
       padding: 1.75rem 0;
       cursor: pointer;
       outline: none;
+      z-index: $zIndex--l-gnav-button;
     }
     span {
       display: block;
@@ -110,7 +112,7 @@
       }
     }
   }
-  &_Item {
+  &_item {
     @include media-down(md) {
       display: block;
       & + & {
@@ -122,7 +124,7 @@
       margin: 0 1rem;
     }
   }
-  &_Link {
+  &_link {
     display: block;
     @include media-down(md) {
       padding: 1rem 0;
@@ -137,8 +139,8 @@
       }
     }
   }
-  @at-root #{$base}_Item--active {
-    #{$base}_Link {
+  @at-root #{$base}_item--active {
+    #{$base}_link {
       color: yellow;
     }
   }
@@ -150,7 +152,7 @@
     position: relative;
   }
   .menu-show & {
-    &_Overlay {
+    &_overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -158,7 +160,7 @@
       height: 100%;
       background: rgba(0,0,0,0.2);
       content: "";
-      z-index: 1;
+      z-index: $zIndex--l-wrapper-overlay;
     }
   }
 }

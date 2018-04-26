@@ -1,0 +1,30 @@
+// Copyright 2018
+//
+// u-zIndex.scss
+
+
+// Z-Index Scale (private vars)
+// --------------------------------------------------
+$zIndex-1:   100;
+$zIndex-2:   200;
+$zIndex-3:   300;
+$zIndex-4:   400;
+$zIndex-5:   500;
+$zIndex-6:   600;
+$zIndex-7:   700;
+$zIndex-8:   800;
+$zIndex-9:   900;
+$zIndex-10: 1000;
+
+
+// Z-Index Applications
+// --------------------------------------------------
+
+
+
+// Z-Index Mobile menu-show
+// --------------------------------------------------
+$zIndex--l-wrapper-overlay:         $zIndex-8;
+$zIndex--l-header:                  $zIndex-9;
+$zIndex--l-gnav:                    $zIndex-9;
+$zIndex--l-gnav-button:             $zIndex-10;
