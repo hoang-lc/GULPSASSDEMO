@@ -2,7 +2,7 @@ var gulp          = require('gulp');
 
 var plumber       = require('gulp-plumber');
 var notify        = require('gulp-notify');
-var htmlssi       = require("gulp-ssi");
+var gulpssi       = require("gulp-ssi");
 
 var sass          = require('gulp-sass');
 var postcss       = require('gulp-postcss');
@@ -36,7 +36,7 @@ gulp.task('html', function() {
   return gulp.src('_src/**/*.html')
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     //build html ssi
-    // .pipe(htmlssi({root: './_src/'}))
+    // .pipe(gulpssi({root: './_src/'}))
     .pipe(gulp.dest('./_dest'));
 });
 

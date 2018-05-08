@@ -22,7 +22,7 @@
       align-items: center;
     }
   }
-  .menu-show & {
+  .js-menu-show & {
     z-index: $zIndex--l-header;
   }
 }
@@ -59,7 +59,7 @@
     margin-left: 2%;
     text-align: right;
   }
-  &.u-show {
+  &.is-show {
     left: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: $zIndex--l-gnav;
@@ -98,15 +98,15 @@
         bottom: -1.1rem;
       }
     }
-    &.u-close {
+    &.is-close {
       span {
         background-color: $COLOR-GRAY;
         &:before {
-          transform: rotate(-45deg);
+          transform: rotate(-135deg);
           top: 0;
         }
         &:after {
-          transform: rotate(45deg);
+          transform: rotate(-45deg);
           bottom: 0;
         }
       }
@@ -151,7 +151,7 @@
     overflow: hidden;
     position: relative;
   }
-  .menu-show & {
+  .js-menu-show & {
     &_overlay {
       position: absolute;
       top: 0;
